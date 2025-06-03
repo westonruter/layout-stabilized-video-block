@@ -4,7 +4,7 @@
  * Plugin URI: https://github.com/westonruter/layout-stabilized-video-block
  * Description: Adds missing <code>width</code> and <code>height</code> attributes to the <code>video</code> tag in the Video block along with the <code>aspect-ratio</code> style to prevent a layout shift when the video is loaded. Only applies to videos selected from the Media Library. Improves the Cumulative Layout Shift (CLS) metric from Core Web Vitals.
  * Requires at least: 6.8
- * Requires PHP: 8.1
+ * Requires PHP: 7.4
  * Version: 0.1.0
  * Author: Weston Ruter
  * Author URI: https://weston.ruter.net/
@@ -50,7 +50,7 @@ function filter_rendered_video_block_content( mixed $content, array $block ): mi
 	}
 	return $content;
 }
-add_filter( 'render_block_core/video', filter_rendered_video_block_content( ... ), 10, 2 );
+add_filter( 'render_block_core/video', __NAMESPACE__ . '\filter_rendered_video_block_content', 10, 2 );
 
 /**
  * Adds inline style for the Video blocks that have a VIDEO tag with a width and height attribute.
@@ -61,7 +61,7 @@ function add_video_block_inline_style(): void {
 	$handle = wp_should_load_separate_core_block_assets() ? 'wp-block-video' : 'wp-block-library';
 	wp_add_inline_style( $handle, '.wp-block-video video[width][height]{height:auto}' );
 }
-add_action( 'enqueue_block_assets', add_video_block_inline_style( ... ) );
+add_action( 'enqueue_block_assets', __NAMESPACE__ . '\add_video_block_inline_style' );
 
 /**
  * Renders the `core/video` block on the server to supply the width and height attributes from the attachment metadata.

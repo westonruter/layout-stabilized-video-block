@@ -3,7 +3,7 @@
 	<config name="text_domain" value="layout-stabilized-video-block"/>
 
 	<rule ref="PHPCompatibility"/>
-	<config name="testVersion" value="8.1-"/>
+	<config name="testVersion" value="7.4-"/>
 
 	<rule ref="WordPress-Docs"/>
 	<rule ref="WordPress-Extra" />
