@@ -12,6 +12,8 @@ This plugin adds missing `width` and `height` attributes to the `video` tag in t
 
 This only applies to videos selected from the Media Library since only these would have the metadata for the dimensions available.
 
+The fix in this plugin is the same that has been proposed in PR [#52185](https://github.com/WordPress/gutenberg/issues/52185) for Gutenberg.
+
 ## Installation ##
 
 1. Download the plugin [ZIP from GitHub](https://github.com/westonruter/layout-stabilized-video-block/archive/refs/heads/main.zip) or if you have a local clone of the repo, run `npm run plugin-zip`.
