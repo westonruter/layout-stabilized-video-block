@@ -59,7 +59,7 @@ add_filter( 'render_block_core/video', __NAMESPACE__ . '\filter_rendered_video_b
  */
 function add_video_block_inline_style(): void {
 	$handle = wp_should_load_separate_core_block_assets() ? 'wp-block-video' : 'wp-block-library';
-	wp_add_inline_style( $handle, '.wp-block-video video[width][height]{height:auto}' );
+	wp_add_inline_style( $handle, '.wp-block-video video{height:auto}' );
 }
 add_action( 'enqueue_block_assets', __NAMESPACE__ . '\add_video_block_inline_style' );
 
