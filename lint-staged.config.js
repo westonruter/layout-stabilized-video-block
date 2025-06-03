@@ -1,7 +1,9 @@
 /**
  * @type {import('lint-staged').Configuration}
  */
-export default {
+const config = {
 	'*.{js,ts,mjs}': [ 'npx wp-scripts lint-js', () => 'npx tsc' ],
 	'*.php': [ 'composer phpcs', () => 'composer phpstan' ],
 };
+
+module.exports = config;
