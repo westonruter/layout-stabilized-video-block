@@ -8,7 +8,7 @@ Tags:         performance
 
 ## Description ##
 
-This plugin adds missing `width` and `height` attributes to the `video` tag in the Video block along with the `aspect-ratio` style to prevent a layout shift when the video is loaded. This improves the Cumulative Layout Shift (CLS) metric from Core Web Vitals.
+This plugin adds missing `width` and `height` attributes to the `video` tag in the Video block along with the `aspect-ratio` style to prevent a layout shift when the video is loaded. This improves the Cumulative Layout Shift (CLS) metric from Core Web Vitals. The functionality can be disabled by adding `?disable_layout_stabilized_video_block=1` to the URL in order to see the impact of the change.
 
 This only applies to videos selected from the Media Library since only these would have the metadata for the dimensions available.
 
