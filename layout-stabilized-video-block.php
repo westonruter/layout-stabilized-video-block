@@ -118,7 +118,7 @@ function render_block_core_video( array $attributes, string $content ): string {
 	 * Note that a style rule using attr() like the following cannot currently be used:
 	 *
 	 *     .wp-block-video video[width][height] {
-	 *         aspect-ratio: attr(width number) / attr(height number);
+	 *         aspect-ratio: attr(width type(<number>)) / attr(height type(<number>));
 	 *     }
 	 *
 	 * This is because this attr() is yet only implemented in Chromium: <https://caniuse.com/css3-attr>.
