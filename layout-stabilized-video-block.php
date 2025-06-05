@@ -113,6 +113,16 @@ function render_block_core_video( array $attributes, string $content ): string {
 	$p->set_attribute( 'width', (string) $metadata['width'] );
 	$p->set_attribute( 'height', (string) $metadata['height'] );
 
+	/*
+	 * The aspect-ratio style is needed due to an issue with the CSS spec: <https://github.com/w3c/csswg-drafts/issues/7524>.
+	 * Note that a style rule using attr() like the following cannot currently be used:
+	 *
+	 *     .wp-block-video video[width][height] {
+	 *         aspect-ratio: attr(width number) / attr(height number);
+	 *     }
+	 *
+	 * This is because this attr() is yet only implemented in Chromium: <https://caniuse.com/css3-attr>.
+	 */
 	$style = $p->get_attribute( 'style' );
 	if ( ! is_string( $style ) ) {
 		$style = '';
