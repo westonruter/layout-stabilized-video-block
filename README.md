@@ -1,3 +1,6 @@
+> [!NOTE]  
+> This plugin is obsolete because the functionality in this plugin landed in WordPress 6.9. See [section in frontend performance field guide](https://make.wordpress.org/core/2025/11/18/wordpress-6-9-frontend-performance-field-guide/#eliminate-layout-shift-in-video-block).
+
 # Layout-stabilized Video Block #
 
 Contributors: westonruter  
